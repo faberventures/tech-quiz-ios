@@ -22,9 +22,11 @@ class LandingViewController: UIViewController {
     }
     
     @IBAction func githubLoginClick() {
+        self.performSegueWithIdentifier("dashboardSegue", sender: self)
     }
 
     @IBAction func linkedinLoginClick() {
+        self.performSegueWithIdentifier("dashboardSegue", sender: self)
     }
     /*
     // MARK: - Navigation

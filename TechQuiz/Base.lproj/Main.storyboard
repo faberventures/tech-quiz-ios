@@ -36,7 +36,6 @@
                                         </state>
                                         <connections>
                                             <action selector="githubLoginClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="H9o-sF-O8g"/>
-                                            <action selector="wasdsadas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7fO-NS-4lK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbC-P5-9Na">
@@ -85,7 +84,7 @@
         <!--Dashboard View Controller-->
         <scene sceneID="WG7-RU-3tt">
             <objects>
-                <viewController id="T0I-qq-Hmh" customClass="DashboardViewController" sceneMemberID="viewController">
+                <viewController id="T0I-qq-Hmh" customClass="DashboardViewController" customModule="TechQuiz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ezq-cF-AXB"/>
                         <viewControllerLayoutGuide type="bottom" id="2LW-Oc-qT9"/>
@@ -94,32 +93,123 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="862-5C-vPH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pZm-UB-iT2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellHeader" rowHeight="270" id="2N2-On-KCG">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2N2-On-KCG" id="NvC-72-eHE">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CMS-si-qIZ">
+                                                    <rect key="frame" x="175" y="9" width="251" height="251"/>
+                                                    <color key="backgroundColor" red="1" green="0.54256794590000001" blue="0.001330525038" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="251" id="Z5k-4Q-jO7"/>
+                                                        <constraint firstAttribute="height" constant="251" id="ywT-py-rdN"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="CMS-si-qIZ" secondAttribute="centerY" id="H2u-hg-GYz"/>
+                                                <constraint firstAttribute="centerX" secondItem="CMS-si-qIZ" secondAttribute="centerX" id="ROH-iX-cda"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonStartCell" rowHeight="80" id="59Z-RA-VJK">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="59Z-RA-VJK" id="QcX-E2-Sq3">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bc-Uk-h3i">
+                                                    <rect key="frame" x="48" y="25" width="504" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.54256794590000001" blue="0.001330525038" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Start">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1bc-Uk-h3i" firstAttribute="leading" secondItem="QcX-E2-Sq3" secondAttribute="leadingMargin" constant="40" id="G34-Oe-Lpr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1bc-Uk-h3i" secondAttribute="trailing" constant="40" id="PEg-J6-bqZ"/>
+                                                <constraint firstAttribute="centerY" secondItem="1bc-Uk-h3i" secondAttribute="centerY" id="YUS-Yg-UA2"/>
+                                                <constraint firstAttribute="centerX" secondItem="1bc-Uk-h3i" secondAttribute="centerX" id="sGk-5z-5m1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonHistorytCell" rowHeight="80" id="llp-bR-4E6">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="llp-bR-4E6" id="lpM-oU-GUZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHq-bw-c9u">
+                                                    <rect key="frame" x="48" y="25" width="504" height="30"/>
+                                                    <color key="backgroundColor" red="0.076874919680000001" green="0.088322661090000004" blue="0.76209359219999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="History">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="SHq-bw-c9u" secondAttribute="centerX" id="4aU-ZR-RC0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SHq-bw-c9u" secondAttribute="trailing" constant="40" id="oae-Hd-sVt"/>
+                                                <constraint firstAttribute="centerY" secondItem="SHq-bw-c9u" secondAttribute="centerY" id="rCX-tu-tTe"/>
+                                                <constraint firstItem="SHq-bw-c9u" firstAttribute="leading" secondItem="lpM-oU-GUZ" secondAttribute="leadingMargin" constant="40" id="wUP-Un-7yH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonLogoutCell" rowHeight="80" id="awZ-7d-GLK">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awZ-7d-GLK" id="71B-Ys-y1m">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKA-lc-mLk">
+                                                    <rect key="frame" x="48" y="25" width="504" height="30"/>
+                                                    <color key="backgroundColor" red="0.076874919680000001" green="0.088322661090000004" blue="0.76209359219999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Logout">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="dKA-lc-mLk" secondAttribute="centerX" id="9kg-dh-iz3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dKA-lc-mLk" secondAttribute="trailing" constant="40" id="PeN-mM-6qv"/>
+                                                <constraint firstAttribute="centerY" secondItem="dKA-lc-mLk" secondAttribute="centerY" id="YNa-By-1My"/>
+                                                <constraint firstItem="dKA-lc-mLk" firstAttribute="leading" secondItem="71B-Ys-y1m" secondAttribute="leadingMargin" constant="40" id="hOo-Yy-ZLa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="T0I-qq-Hmh" id="Q0N-v0-aAM"/>
-                                    <outlet property="delegate" destination="T0I-qq-Hmh" id="jzm-cD-YM8"/>
+                                    <outlet property="dataSource" destination="T0I-qq-Hmh" id="Qcj-Mq-9ID"/>
+                                    <outlet property="delegate" destination="T0I-qq-Hmh" id="iai-pC-YLI"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="862-5C-vPH" firstAttribute="leading" secondItem="pIg-1c-hJd" secondAttribute="leading" id="7KM-2v-aX3"/>
-                            <constraint firstItem="2LW-Oc-qT9" firstAttribute="top" secondItem="862-5C-vPH" secondAttribute="bottom" id="Bjy-YD-JN5"/>
-                            <constraint firstAttribute="trailing" secondItem="862-5C-vPH" secondAttribute="trailing" id="RGY-th-HoP"/>
-                            <constraint firstItem="862-5C-vPH" firstAttribute="top" secondItem="pIg-1c-hJd" secondAttribute="top" id="lhf-P8-qzP"/>
+                            <constraint firstItem="pZm-UB-iT2" firstAttribute="top" secondItem="pIg-1c-hJd" secondAttribute="top" id="Reo-xA-yX0"/>
+                            <constraint firstItem="2LW-Oc-qT9" firstAttribute="top" secondItem="pZm-UB-iT2" secondAttribute="bottom" id="SkC-7D-4Yf"/>
+                            <constraint firstAttribute="trailing" secondItem="pZm-UB-iT2" secondAttribute="trailing" id="Tpy-QP-MC4"/>
+                            <constraint firstItem="pZm-UB-iT2" firstAttribute="leading" secondItem="pIg-1c-hJd" secondAttribute="leading" id="gtI-31-T8T"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dashboardTableView" destination="862-5C-vPH" id="mgC-IC-boX"/>
+                        <outlet property="dashboardTableView" destination="pZm-UB-iT2" id="nVz-j4-m64"/>
                         <segue destination="zRt-tY-XXu" kind="show" identifier="userQuizesSegue" id="Vh9-cn-013"/>
                         <segue destination="KbB-0R-5Lq" kind="show" identifier="subjectsSegue" id="iYo-za-MvG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KG7-Ac-oy1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="382"/>
+            <point key="canvasLocation" x="1004" y="381"/>
         </scene>
         <!--Subjects View Controller-->
         <scene sceneID="p5m-Wh-GyS">
@@ -163,7 +253,7 @@
         <!--User Quizes View Controller-->
         <scene sceneID="pMd-oe-Syg">
             <objects>
-                <viewController id="zRt-tY-XXu" customClass="UserQuizesViewController" sceneMemberID="viewController">
+                <viewController id="zRt-tY-XXu" customClass="UserQuizesViewController" customModule="TechQuiz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T1U-rK-yCF"/>
                         <viewControllerLayoutGuide type="bottom" id="Nsx-uT-S7l"/>

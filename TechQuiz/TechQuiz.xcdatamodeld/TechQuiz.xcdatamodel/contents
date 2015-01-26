@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Answer" representedClassName="Answer" syncable="YES">
+        <attribute name="correct" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
+        <relationship name="userAnswers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserAnswer" inverseName="answer" inverseEntity="UserAnswer" syncable="YES"/>
+    </entity>
+    <entity name="Question" representedClassName="Question" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="question" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="quizes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Quiz" inverseName="questions" inverseEntity="Quiz" syncable="YES"/>
+        <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="questions" inverseEntity="Subject" syncable="YES"/>
+    </entity>
+    <entity name="Quiz" representedClassName="Quiz" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Question" inverseName="quizes" inverseEntity="Question" syncable="YES"/>
+        <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="quizes" inverseEntity="Subject" syncable="YES"/>
+        <relationship name="userQuizes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserQuiz" inverseName="quiz" inverseEntity="UserQuiz" syncable="YES"/>
+    </entity>
+    <entity name="Subject" representedClassName="Subject" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="subject" inverseEntity="Question" syncable="YES"/>
+        <relationship name="quizes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Quiz" inverseName="subject" inverseEntity="Quiz" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="facebookId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="linkedinId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userQuizes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserQuiz" inverseName="user" inverseEntity="UserQuiz" syncable="YES"/>
+    </entity>
+    <entity name="UserAnswer" representedClassName="UserAnswer" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="answer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Answer" inverseName="userAnswers" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="userQuiz" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserQuiz" inverseName="userAnswers" inverseEntity="UserQuiz" syncable="YES"/>
+    </entity>
+    <entity name="UserQuiz" representedClassName="UserQuiz" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="quiz" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quiz" inverseName="userQuizes" inverseEntity="Quiz" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userQuizes" inverseEntity="User" syncable="YES"/>
+        <relationship name="userAnswers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserAnswer" inverseName="userQuiz" inverseEntity="UserAnswer" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Answer" positionX="-3665" positionY="-2286" width="128" height="118"/>
+        <element name="Question" positionX="-3690" positionY="-2113" width="128" height="133"/>
+        <element name="Quiz" positionX="-4014" positionY="-2104" width="128" height="103"/>
+        <element name="UserAnswer" positionX="-3852" positionY="-2286" width="128" height="88"/>
+        <element name="Subject" positionX="-3969" positionY="-1915" width="128" height="103"/>
+        <element name="User" positionX="-4023" positionY="-2421" width="128" height="103"/>
+        <element name="UserQuiz" positionX="-4025" positionY="-2268" width="128" height="103"/>
+    </elements>
+</model>

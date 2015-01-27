@@ -30,44 +30,32 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cellName = ""
+        var cell = UITableViewCell()
         
-        switch indexPath.row {
-        case 0:
-            cellName = "CellHeader"
-        case 1:
-            cellName = "ButtonStartCell"
-        case 2:
-            cellName = "ButtonHistorytCell"
-        case 3:
-            cellName = "ButtonLogoutCell"
-        default:
-            cellName = "CellHeader"
+        if indexPath.row == 0 {
+            var bcell = tableView.dequeueReusableCellWithIdentifier("CellHeader") as DashboardHeaderTableViewCell
+            // TODO define the image
+            // bcell.logoImage.image = UIImage()
+            cell = bcell
         }
-        
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellName) as UITableViewCell
+        else {
+            var bcell = tableView.dequeueReusableCellWithIdentifier("ButtonCell") as DashboardButtonTableViewCell
+            bcell.updateCell(indexPath.row, viewController: self)
+            cell = bcell
+        }
 
         return cell
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        var height = 0
-        
-        switch indexPath.row {
-        case 0:
-            height = 260
-        case 1:
-            height = 80
-        case 2:
-            height = 80
-        case 3:
-            height = 80
-        default:
-            height = 0
+        if indexPath.row == 0 {
+            return 260
+        }
+        else {
+            return 80
         }
         
-        return CGFloat(height)
     }
     
     /*

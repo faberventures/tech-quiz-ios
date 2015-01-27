@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qGC-BN-om2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C106a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qGC-BN-om2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -97,7 +97,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellHeader" rowHeight="270" id="2N2-On-KCG">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellHeader" rowHeight="270" id="2N2-On-KCG" customClass="DashboardHeaderTableViewCell" customModule="TechQuiz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2N2-On-KCG" id="NvC-72-eHE">
@@ -117,8 +117,11 @@
                                                 <constraint firstAttribute="centerX" secondItem="CMS-si-qIZ" secondAttribute="centerX" id="ROH-iX-cda"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="logoImage" destination="CMS-si-qIZ" id="rfo-N5-Jq4"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonStartCell" rowHeight="80" id="59Z-RA-VJK">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonCell" rowHeight="80" id="59Z-RA-VJK" customClass="DashboardButtonTableViewCell" customModule="TechQuiz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="59Z-RA-VJK" id="QcX-E2-Sq3">
@@ -130,6 +133,9 @@
                                                     <state key="normal" title="Start">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="buttonClick:" destination="59Z-RA-VJK" eventType="touchUpInside" id="9x0-tN-ona"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -139,54 +145,12 @@
                                                 <constraint firstAttribute="centerX" secondItem="1bc-Uk-h3i" secondAttribute="centerX" id="sGk-5z-5m1"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonHistorytCell" rowHeight="80" id="llp-bR-4E6">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="llp-bR-4E6" id="lpM-oU-GUZ">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHq-bw-c9u">
-                                                    <rect key="frame" x="48" y="25" width="504" height="30"/>
-                                                    <color key="backgroundColor" red="0.076874919680000001" green="0.088322661090000004" blue="0.76209359219999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="History">
-                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="SHq-bw-c9u" secondAttribute="centerX" id="4aU-ZR-RC0"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="SHq-bw-c9u" secondAttribute="trailing" constant="40" id="oae-Hd-sVt"/>
-                                                <constraint firstAttribute="centerY" secondItem="SHq-bw-c9u" secondAttribute="centerY" id="rCX-tu-tTe"/>
-                                                <constraint firstItem="SHq-bw-c9u" firstAttribute="leading" secondItem="lpM-oU-GUZ" secondAttribute="leadingMargin" constant="40" id="wUP-Un-7yH"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonLogoutCell" rowHeight="80" id="awZ-7d-GLK">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awZ-7d-GLK" id="71B-Ys-y1m">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKA-lc-mLk">
-                                                    <rect key="frame" x="48" y="25" width="504" height="30"/>
-                                                    <color key="backgroundColor" red="0.076874919680000001" green="0.088322661090000004" blue="0.76209359219999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Logout">
-                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="dKA-lc-mLk" secondAttribute="centerX" id="9kg-dh-iz3"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="dKA-lc-mLk" secondAttribute="trailing" constant="40" id="PeN-mM-6qv"/>
-                                                <constraint firstAttribute="centerY" secondItem="dKA-lc-mLk" secondAttribute="centerY" id="YNa-By-1My"/>
-                                                <constraint firstItem="dKA-lc-mLk" firstAttribute="leading" secondItem="71B-Ys-y1m" secondAttribute="leadingMargin" constant="40" id="hOo-Yy-ZLa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="1bc-Uk-h3i" id="wDc-hD-SQV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="T0I-qq-Hmh" id="Qcj-Mq-9ID"/>
                                     <outlet property="delegate" destination="T0I-qq-Hmh" id="iai-pC-YLI"/>
@@ -222,7 +186,19 @@
                     <view key="view" contentMode="scaleToFill" id="I46-pi-mNY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha uma área" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEE-lD-CuP">
+                                <rect key="frame" x="232" y="28" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="BEE-lD-CuP" secondAttribute="centerX" id="46G-R6-VdN"/>
+                            <constraint firstItem="BEE-lD-CuP" firstAttribute="top" secondItem="9c4-o3-QMx" secondAttribute="bottom" constant="8" id="l1b-zg-K0m"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="vyg-Zq-IiJ" kind="show" identifier="quizSegue" id="jXv-AX-Nzj"/>
@@ -261,7 +237,19 @@
                     <view key="view" contentMode="scaleToFill" id="Lol-li-NDy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testes que já fiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geI-pN-rQD">
+                                <rect key="frame" x="239" y="28" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="geI-pN-rQD" secondAttribute="centerX" id="MtF-sZ-SpH"/>
+                            <constraint firstItem="geI-pN-rQD" firstAttribute="top" secondItem="T1U-rK-yCF" secondAttribute="bottom" constant="8" id="m8z-SC-DTJ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="7XU-Yc-liL" kind="show" identifier="userQuizDetailSegue" id="5YH-Q4-QsG"/>

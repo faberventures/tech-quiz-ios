@@ -30,6 +30,8 @@
 		30E79A371A76A12900A349AB /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E79A361A76A12900A349AB /* LandingViewController.swift */; };
 		30E79A391A76A26D00A349AB /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E79A381A76A26D00A349AB /* DashboardViewController.swift */; };
 		30E79A3B1A76A2F000A349AB /* UserQuizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E79A3A1A76A2F000A349AB /* UserQuizesViewController.swift */; };
+		CECC43651A77EECB006BAA00 /* DashboardHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC43641A77EECB006BAA00 /* DashboardHeaderTableViewCell.swift */; };
+		CECC43671A77F027006BAA00 /* DashboardButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC43661A77F027006BAA00 /* DashboardButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		30E79A361A76A12900A349AB /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingViewController.swift; path = "Classes/View Controllers/LandingViewController.swift"; sourceTree = "<group>"; };
 		30E79A381A76A26D00A349AB /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = "Classes/View Controllers/DashboardViewController.swift"; sourceTree = "<group>"; };
 		30E79A3A1A76A2F000A349AB /* UserQuizesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserQuizesViewController.swift; path = "Classes/View Controllers/UserQuizesViewController.swift"; sourceTree = "<group>"; };
+		CECC43641A77EECB006BAA00 /* DashboardHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardHeaderTableViewCell.swift; path = Classes/Core/Views/Cells/DashboardHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		CECC43661A77F027006BAA00 /* DashboardButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardButtonTableViewCell.swift; path = Classes/Core/Views/Cells/DashboardButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 		30C94E361A769EAE0083BC30 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CECC43611A77EE64006BAA00 /* Core */,
 				30E79A351A76A0EB00A349AB /* View Controllers */,
 				30C94E371A769EB40083BC30 /* Model */,
 			);
@@ -171,6 +176,31 @@
 				30E79A3A1A76A2F000A349AB /* UserQuizesViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CECC43611A77EE64006BAA00 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CECC43621A77EE6A006BAA00 /* Views */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		CECC43621A77EE6A006BAA00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CECC43631A77EE71006BAA00 /* Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CECC43631A77EE71006BAA00 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CECC43641A77EECB006BAA00 /* DashboardHeaderTableViewCell.swift */,
+				CECC43661A77F027006BAA00 /* DashboardButtonTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,9 +311,11 @@
 				30E79A2A1A76A08600A349AB /* Question.swift in Sources */,
 				30C94E141A76995F0083BC30 /* AppDelegate.swift in Sources */,
 				30E79A301A76A08600A349AB /* Subject.swift in Sources */,
+				CECC43671A77F027006BAA00 /* DashboardButtonTableViewCell.swift in Sources */,
 				30E79A331A76A08600A349AB /* User.swift in Sources */,
 				30E79A391A76A26D00A349AB /* DashboardViewController.swift in Sources */,
 				30E79A371A76A12900A349AB /* LandingViewController.swift in Sources */,
+				CECC43651A77EECB006BAA00 /* DashboardHeaderTableViewCell.swift in Sources */,
 				30E79A2D1A76A08600A349AB /* Answer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

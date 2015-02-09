@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30BE86C81A891CF900E1DEEC /* GithubLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE86C71A891CF900E1DEEC /* GithubLoginViewController.swift */; };
 		30C94E141A76995F0083BC30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C94E131A76995F0083BC30 /* AppDelegate.swift */; };
 		30C94E171A76995F0083BC30 /* TechQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30C94E151A76995F0083BC30 /* TechQuiz.xcdatamodeld */; };
 		30C94E1C1A76995F0083BC30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C94E1A1A76995F0083BC30 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30BE86C71A891CF900E1DEEC /* GithubLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubLoginViewController.swift; path = "Classes/View Controllers/Login/GithubLoginViewController.swift"; sourceTree = "<group>"; };
 		30C94E0E1A76995F0083BC30 /* TechQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C94E121A76995F0083BC30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30C94E131A76995F0083BC30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30BE86C61A891CD900E1DEEC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				30BE86C71A891CF900E1DEEC /* GithubLoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		30C94E051A76995F0083BC30 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 		30E79A351A76A0EB00A349AB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				30BE86C61A891CD900E1DEEC /* Login */,
 				30E79A361A76A12900A349AB /* LandingViewController.swift */,
 				30E79A381A76A26D00A349AB /* DashboardViewController.swift */,
 				30E79A3A1A76A2F000A349AB /* UserQuizesViewController.swift */,
@@ -404,6 +415,7 @@
 				30EC16AD1A8911F7005763F7 /* Question.swift in Sources */,
 				30EC16C81A8916DF005763F7 /* Subject+Networking.swift in Sources */,
 				CECC43671A77F027006BAA00 /* DashboardButtonTableViewCell.swift in Sources */,
+				30BE86C81A891CF900E1DEEC /* GithubLoginViewController.swift in Sources */,
 				30E79A391A76A26D00A349AB /* DashboardViewController.swift in Sources */,
 				30EC16AA1A890CE6005763F7 /* SubjectsViewController.swift in Sources */,
 				30EC16BF1A8911F7005763F7 /* Answer.swift in Sources */,

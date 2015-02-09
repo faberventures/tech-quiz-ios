@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DashboardButtonDelegate {
     
     @IBOutlet weak var dashboardTableView: UITableView!
     
@@ -38,13 +38,43 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ButtonCell") as DashboardButtonTableViewCell
-        cell.updateCell(indexPath.row, viewController: self)
+        cell.updateCell(dashboardTitleForRow(indexPath.row))
+        cell.delegate = self
         return cell
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
         return DashboardButtonTableViewCell.Constants.height
+    }
+    
+    // MARK: Helper
+    func dashboardTitleForRow(index: Int) -> String {
+        if index == 0 {
+            return "Start"
+        }
+        else if index == 1 {
+            return "History"
+        }
+        else {
+            return "Logout"
+        }
+    }
+    
+    // MARK: DashboardCellDelegate
+    func dashboardButtonClicked(cell: DashboardButtonTableViewCell) {
+        
+        if let indexPath = dashboardTableView.indexPathForCell(cell) {
+            if indexPath.row == 0 {
+                performSegueWithIdentifier("subjectsSegue", sender: self)
+            }
+            else if indexPath.row == 1 {
+                performSegueWithIdentifier("userQuizesSegue", sender: self)
+            }
+            else {
+                // TODO add logout logic here
+                navigationController?.popToRootViewControllerAnimated(true)
+            }
+        }
         
     }
     

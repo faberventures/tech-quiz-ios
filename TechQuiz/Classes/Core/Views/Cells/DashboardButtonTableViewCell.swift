@@ -8,13 +8,17 @@
 
 import UIKit
 
+protocol DashboardButtonDelegate {
+    func dashboardButtonClicked(cell: DashboardButtonTableViewCell)
+}
+
 class DashboardButtonTableViewCell: UITableViewCell {
     
     struct Constants {
         static let height: CGFloat = 80.0
     }
     
-    var viewController = UIViewController()
+    var delegate: DashboardButtonDelegate!
     
     @IBOutlet weak var button: UIButton!
     override func awakeFromNib() {
@@ -28,34 +32,13 @@ class DashboardButtonTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateCell(id:Int, viewController: UIViewController) {
-        self.viewController = viewController
-        self.button.tag = id;
-        var title = ""
-        if id == 1 {
-            title = "Start"
-        }
-        else if id == 2 {
-            title = "History"
-        }
-        else {
-            title = "Logout"
-        }
-        
-        self.button.setTitle(title, forState: UIControlState.Normal)
+    func updateCell(title: String) {
+        button.setTitle(title, forState: UIControlState.Normal)
     }
 
     @IBAction func buttonClick(sender: UIButton) {
-        var segue = ""
-        if sender.tag == 1 {
-            segue = "subjectsSegue"
+        if delegate != nil {
+            delegate.dashboardButtonClicked(self)
         }
-        else if sender.tag == 2 {
-            segue = "userQuizesSegue"
-        }
-        else {
-            //perform logout
-        }
-        viewController.performSegueWithIdentifier(segue, sender: viewController)
     }
 }

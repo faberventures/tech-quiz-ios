@@ -2,7 +2,7 @@
 //  Question.swift
 //  TechQuiz
 //
-//  Created by Ivan Bruel on 26/01/15.
+//  Created by Ivan Bruel on 09/02/15.
 //  Copyright (c) 2015 Faber Ventures. All rights reserved.
 //
 
@@ -16,6 +16,6 @@ class Question: NSManagedObject {
     @NSManaged var text: String
     @NSManaged var answers: NSSet
     @NSManaged var quizes: NSSet
-    @NSManaged var subject: NSManagedObject
+    @NSManaged var subject: Subject
 
 }

@@ -9,7 +9,11 @@
 import UIKit
 
 class DashboardButtonTableViewCell: UITableViewCell {
-
+    
+    struct Constants {
+        static let height: CGFloat = 80.0
+    }
+    
     var viewController = UIViewController()
     
     @IBOutlet weak var button: UIButton!

@@ -2,7 +2,7 @@
 //  Quiz.swift
 //  TechQuiz
 //
-//  Created by Ivan Bruel on 26/01/15.
+//  Created by Ivan Bruel on 09/02/15.
 //  Copyright (c) 2015 Faber Ventures. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ class Quiz: NSManagedObject {
 
     @NSManaged var identifier: NSNumber
     @NSManaged var questions: NSOrderedSet
-    @NSManaged var subject: NSManagedObject
+    @NSManaged var subject: Subject
     @NSManaged var userQuizes: NSSet
 
 }

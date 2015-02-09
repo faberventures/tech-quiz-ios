@@ -18,6 +18,8 @@ extension User {
         
     }
     
-    
+    func logout() -> Void {
+        
+    }
     
 }

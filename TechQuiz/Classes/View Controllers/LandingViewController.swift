@@ -22,7 +22,9 @@ class LandingViewController: UIViewController {
     }
     
     @IBAction func githubLoginClick() {
-        self.performSegueWithIdentifier("dashboardSegue", sender: self)
+        let githubLoginViewController = GithubLoginViewController()
+        let navigationController = UINavigationController(rootViewController: githubLoginViewController)
+        presentViewController(navigationController, animated: true, completion: nil)
     }
 
     @IBAction func linkedinLoginClick() {

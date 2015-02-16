@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3029BC131A925E0C00745C3B /* NSURL+QueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029BC121A925E0C00745C3B /* NSURL+QueryParameters.swift */; };
 		30BE86C81A891CF900E1DEEC /* GithubLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE86C71A891CF900E1DEEC /* GithubLoginViewController.swift */; };
 		30C94E141A76995F0083BC30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C94E131A76995F0083BC30 /* AppDelegate.swift */; };
 		30C94E171A76995F0083BC30 /* TechQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30C94E151A76995F0083BC30 /* TechQuiz.xcdatamodeld */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3029BC121A925E0C00745C3B /* NSURL+QueryParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURL+QueryParameters.swift"; path = "Classes/Extensions/NSURL+QueryParameters.swift"; sourceTree = "<group>"; };
 		30BE86C71A891CF900E1DEEC /* GithubLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubLoginViewController.swift; path = "Classes/View Controllers/Login/GithubLoginViewController.swift"; sourceTree = "<group>"; };
 		30C94E0E1A76995F0083BC30 /* TechQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C94E121A76995F0083BC30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3029BC111A925DEF00745C3B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3029BC121A925E0C00745C3B /* NSURL+QueryParameters.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		30BE86C61A891CD900E1DEEC /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +182,7 @@
 		30C94E361A769EAE0083BC30 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3029BC111A925DEF00745C3B /* Extensions */,
 				CECC43621A77EE6A006BAA00 /* Views */,
 				30E79A351A76A0EB00A349AB /* View Controllers */,
 				30C94E371A769EB40083BC30 /* Model */,
@@ -409,6 +420,7 @@
 				30EC16BC1A8911F7005763F7 /* Quiz.swift in Sources */,
 				30C94E171A76995F0083BC30 /* TechQuiz.xcdatamodeld in Sources */,
 				30E79A3B1A76A2F000A349AB /* UserQuizesViewController.swift in Sources */,
+				3029BC131A925E0C00745C3B /* NSURL+QueryParameters.swift in Sources */,
 				30EC16B31A8911F7005763F7 /* UserQuiz.swift in Sources */,
 				30EC16B61A8911F7005763F7 /* Subject.swift in Sources */,
 				30C94E141A76995F0083BC30 /* AppDelegate.swift in Sources */,

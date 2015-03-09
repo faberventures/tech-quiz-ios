@@ -9,14 +9,16 @@
 import UIKit
 import WebKit
 import Snap
+import Alamofire
 
 class GithubLoginViewController: UIViewController, WKNavigationDelegate {
-
+    
     struct Constants {
-        static let callbackUrl = "http://faber-ventures.com/github/login"
-        static let clientId = "TBD"
-        static let clientSecret = "TBD"
-        static let url = "https://github.com/login/oauth/authorize"
+        static let callbackURL = "http://faber-ventures.com/github/login"
+        static let clientId = "88ad38430a2521821652"
+        static let clientSecret = "1763df68f0d797e53e0698e45dbdac50c55ee801"
+        static let authorizeURL = "https://github.com/login/oauth/authorize"
+        static let accessTokenURL = "https://github.com/login/oauth/access_token"
     }
     
     var webView: WKWebView!
@@ -25,7 +27,7 @@ class GithubLoginViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         
         setupViews()
-        loadGithubLogin()
+        requestGithubAuthorization()
     }
     
     private func setupViews() {
@@ -49,18 +51,40 @@ class GithubLoginViewController: UIViewController, WKNavigationDelegate {
         navigationItem.leftBarButtonItem = closeButton
     }
     
-    private func loadGithubLogin() {
+    private func requestGithubAuthorization() {
         let scope = "user"
-        let githubLoginURL = "\(Constants.url)?client_id=\(Constants.clientId)&redirect_uri=\(Constants.callbackUrl)&scope=\(scope)"
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: githubLoginURL)!))
+        let githubAuthorizationURL = "\(Constants.authorizeURL)?client_id=\(Constants.clientId)&redirect_uri=\(Constants.callbackURL)&scope=\(scope)"
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: githubAuthorizationURL)!))
+    }
+    
+    private func githubAccessTokenPOST(code: String) {
+        Alamofire.request(.POST, Constants.accessTokenURL, parameters: githubAccessTokenJSON(code))
+            .responseString { (_, _, string, _) in
+                println(string)
+        }
+    }
+    
+    private func githubAccessTokenJSON(code: String) -> [String: String]{
+        var json: [String: String] = [:];
+        json["code"] = code
+        json["client_id"] = Constants.clientId
+        json["client_secret"] = Constants.clientSecret
+        return json
     }
     
     func closeButtonClicked(button: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        println("url: \(webView.URL)")
+    func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
+        if let url = webView.URL {
+            if url.absoluteString!.hasPrefix(Constants.callbackURL) {
+                if let code = url.queryParams()["code"] as? String {
+                    githubAccessTokenPOST(code)
+                }
+            }
+        }
+        
     }
     
 }

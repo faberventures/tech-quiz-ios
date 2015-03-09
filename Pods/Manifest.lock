@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (1.1.4)
-  - Snap (0.0.5)
+  - Snap (0.0.6)
   - SVProgressHUD (1.1.2)
 
 DEPENDENCIES:
@@ -10,7 +10,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 524225da382071ee3e6d0badd0ee4b4dc36740de
-  Snap: dabe988d05b195f232fd137f3691e968ec113aec
+  Snap: 8930faf14165047799c47a46ee4bab0b1f85b54b
   SVProgressHUD: da7a49e789af645d9279ffbca62318945a832438
 
 COCOAPODS: 0.36.0.rc.1

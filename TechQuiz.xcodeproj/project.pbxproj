@@ -41,7 +41,6 @@
 		6B80ACA73DC6F807220E49AE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BFAF935311D77612584EE /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CECC43651A77EECB006BAA00 /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC43641A77EECB006BAA00 /* DashboardHeaderView.swift */; };
 		CECC43671A77F027006BAA00 /* DashboardButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC43661A77F027006BAA00 /* DashboardButtonTableViewCell.swift */; };
-		CFD113A2809FCEBFF465915F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8EA644799840266886808BB /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +95,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B80ACA73DC6F807220E49AE /* Pods.framework in Frameworks */,
-				CFD113A2809FCEBFF465915F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

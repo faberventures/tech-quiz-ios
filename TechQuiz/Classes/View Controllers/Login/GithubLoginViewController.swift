@@ -60,7 +60,9 @@ class GithubLoginViewController: UIViewController, WKNavigationDelegate {
     private func githubAccessTokenPOST(code: String) {
         Alamofire.request(.POST, Constants.accessTokenURL, parameters: githubAccessTokenJSON(code))
             .responseString { (_, _, string, _) in
-                println(string)
+                if let accessToken = string?.queryParams()["access_token"] as? String {
+                    println(accessToken)
+                }
         }
     }
     
@@ -81,9 +83,12 @@ class GithubLoginViewController: UIViewController, WKNavigationDelegate {
             if url.absoluteString!.hasPrefix(Constants.callbackURL) {
                 if let code = url.queryParams()["code"] as? String {
                     githubAccessTokenPOST(code)
+                    //
+                    return
                 }
             }
         }
+        // Mostrar erro
         
     }
     
